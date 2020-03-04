@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-const Button = (props) => {
-    return (
-    <button onClick={props.handleclick}>Birthday Button for {props.firstName} {props.lastName}</button>
-    );
-}
-
 class PersonCard extends Component {
     constructor(props){
         super(props);
@@ -22,6 +16,11 @@ class PersonCard extends Component {
 
     render() {
         const {firstName, lastName, age, hairColor} = this.props;
+        const Button = (props) => {
+            return (
+            <button onClick={props.handleclick}>Birthday Button for {firstName} {lastName}</button>
+            );
+        }
         let newAge = parseInt(age) + this.state.addCount
         return (
             <div>
